@@ -19,13 +19,8 @@ jobs:
       with:
           node-version: 12
 
-    - name: Build React App
-      run: |
-        npm install --global surge # Install Dependencies
-        CI=false npm run build # CI=false to ignore warnings
-
     - name: Install Surge
       run: npm install -g surge
 
     - name: Deploy to Surge
-      run:  surge ./build https://bcamp20_proj_001.surge.sh/ --token ${{secrets.PROJECTS_SECRET}}
+      run:  surge ./bcamp20_proj_001.surge.sh/ --token ${{secrets.PROJECTS_SECRET}}
