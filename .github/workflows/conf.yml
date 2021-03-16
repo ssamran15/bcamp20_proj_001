@@ -23,4 +23,4 @@ jobs:
       run: npm install -g surge
 
     - name: Deploy to Surge
-      run:  surge ./bcamp20_proj_001.surge.sh/ --token ${{secrets.PROJECTS_SECRET}}
+      run:  surge ./ bcamp20_proj_001.surge.sh/ --token ${{secrets.PROJECTS_SECRET}}
