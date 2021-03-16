@@ -5,7 +5,7 @@ name: "Deployment of bootcamp projects on Surge.sh."
 on:
  push:
   branches:
-   - master
+   - main
 
 jobs:
   build:
