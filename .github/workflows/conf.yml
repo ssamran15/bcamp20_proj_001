@@ -1,0 +1,23 @@
+---
+# Configuration file, to deploy the BootCamp2020 projects on Surge
+
+name: "Deployment of bootcamp projects on Surge."
+on:
+ push:
+  branches:
+   - master
+jobs:
+ build:
+  name: Project_Deploy_Surge
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+   - name: Setup Node
+     uses: actions/setup-node@v2-beta
+	 with:
+	  node-version: '12'
+   - name: Setup Surge
+     run: npm install --global surge
+   - name: Execute Deployment with Surge
+     run: surge ./ bcamp20_proj_001.surge.sh --token ${{ secrets.PROJECTS_SECRET }}
+...
